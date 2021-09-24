@@ -1,0 +1,13 @@
+<div class=" ui container">
+    <h3>Create An Account</h3>
+    <form (ngSubmit)="onSubmit()" class="ui form" [formGroup]="authForm">
+        <app-input inputType="text" label="Username" [control]="authForm.get('username')"></app-input>
+        <app-input inputType="password" label="Password" [control]="authForm.get('password')"></app-input>
+        <div *ngIf="authForm.errors" class="ui red basic label">
+            <p *ngIf="authForm.errors.credentials">Invalid Username or Password</p>
+        </div>
+        <div>
+            <button class="ui submit button primary">Submit</button>
+        </div>
+    </form>
+</div>
